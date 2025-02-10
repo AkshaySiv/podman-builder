@@ -4,14 +4,11 @@ set -eu
 # Set container runtime to use Podman
 export CONTAINER_RUNTIME=podman
 
-# Default registry mirror URLs
-DEFAULT_REGISTRY_MIRROR_1="https://shodan.svl.ibm.com:5000"
-DEFAULT_REGISTRY_MIRROR_2="https://shodan.svl.ibm.com:5100"
 
 # Create or update registries.conf file with the mirror URLs
 cat <<EOF > /etc/containers/registries.conf
 [registries.search]
-registries = ['docker.io', 'quay.io', 'na-proxy-svl.artifactory.swg-devops.com', 'na-proxy-svl2.artifactory.swg-devops.com', 'us.icr.io']
+registries = ['docker.io', 'quay.io']
 
 [registries.insecure]
 registries = []
